@@ -113,7 +113,7 @@
 			<p @click="get_json_json()"><button>get_json_json</button>  {{res_from_srv_via_click}}</p>
 			<p @click="post_json_json()"><button>post_json_json</button>  {{res_from_srv_via_click_post}}</p><br>
 			<p @click="multiple_request()"><button>multiple_request</button> {{id_multiple_request}}</p><br>
-
+			<span v-html="id_test_html"><span>
 
 
 		</div>
@@ -144,6 +144,7 @@ var app = new Vue({
 
 	el: '#el',
 	data: {
+		id_test_html: "<h1>id_test_html</html>",
 		res_from_srv : "NULL",
 		res_from_srv_via_click:null,
 		res_from_srv_via_click_post:null,
