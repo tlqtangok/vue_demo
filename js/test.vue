@@ -21,7 +21,7 @@
 .fade-enter-active, .fade-leave-active {
     transition: opacity 2s
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active, 2.1.8 鐗堟湰浠ヤ笅 */ {
+.fade-enter, .fade-leave-to /* .fade-leave-active, 2.1.8 版本以下 */ {
     opacity: 0
 }
 
@@ -99,7 +99,7 @@
 			<input type="radio" id="id_r2" value="v_r2" v-model="id_radio_picked"><label for="id_r2">lable_r2</label><p>{{id_radio_picked}}<br>
 
 			<select v-model="id_select" name="name_sites">
-				<option value="">閫夋嫨涓€涓綉绔?/option>
+				<option value="">选择一个网站</option>
 				<option value="www.algoers.com">algoers.com</option>
 				<option value="www.google.com">Google</option>
 
@@ -257,8 +257,8 @@ var app = new Vue({
 				.catch(function(error){console.log(error);});
 		},
 
-		get_test_0:function(){return axios.get("/json.json");}, 
-		get_test_1:function(){return axios.get("/json.json");},
+		get_test_0:function(){return axios.get("./json.json");}, 
+		get_test_1:function(){return axios.get("./json.json");},
 
 		multiple_request: function(){
 			axios.all([(this.get_test_0)(), (this.get_test_1)()])
