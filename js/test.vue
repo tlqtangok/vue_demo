@@ -21,7 +21,7 @@
 .fade-enter-active, .fade-leave-active {
     transition: opacity 2s
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active, 2.1.8 版本以下 */ {
+.fade-enter, .fade-leave-to /* .fade-leave-active, 2.1.8 鐗堟湰浠ヤ笅 */ {
     opacity: 0
 }
 
@@ -99,7 +99,7 @@
 			<input type="radio" id="id_r2" value="v_r2" v-model="id_radio_picked"><label for="id_r2">lable_r2</label><p>{{id_radio_picked}}<br>
 
 			<select v-model="id_select" name="name_sites">
-				<option value="">选择一个网站</option>
+				<option value="">閫夋嫨涓€涓綉绔?/option>
 				<option value="www.algoers.com">algoers.com</option>
 				<option value="www.google.com">Google</option>
 
@@ -184,7 +184,7 @@ var app = new Vue({
 		class_nm_1:"id_class",
 	},  // end data{}
 	mounted (){
-		axios.get('/json.json')
+		axios.get('./json.json')
 			.then(res =>{this.res_from_srv=res; /*res.data*/})	
 			.catch(function(error){console.log(error);});
 	},
@@ -252,7 +252,7 @@ var app = new Vue({
 			this_data_copy_remove_this_post.string_repeat = string_repeat; 
 
 
-            axios.post( '/json.json?k0=v0&k1=v1', { "post_params":{"k0_post":"v0_post"},  "app_all_data":this_data_copy_remove_this_post} )   // don't merge the json, but string all of the query k0 k1 k0
+            axios.post( './json.json?k0=v0&k1=v1', { "post_params":{"k0_post":"v0_post"},  "app_all_data":this_data_copy_remove_this_post} )   // don't merge the json, but string all of the query k0 k1 k0
 				.then(res =>{ this.res_from_srv_via_click_post =res; /*res.data*/ })	
 				.catch(function(error){console.log(error);});
 		},
@@ -272,7 +272,7 @@ var app = new Vue({
 
 		get_json_json: function()
 		{
-			axios.get( '/json.json?k0=v0&k1=v1', { params:{"k0":"v0"} })   // don't merge the json, but string all of the query k0 k1 k0
+			axios.get( './json.json?k0=v0&k1=v1', { params:{"k0":"v0"} })   // don't merge the json, but string all of the query k0 k1 k0
 				.then(res =>{this.res_from_srv_via_click =res.data; /*res.data*/})	
 				.catch(function(error){console.log(error);});
 		},
